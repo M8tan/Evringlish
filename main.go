@@ -14,6 +14,7 @@ func Get_Input(Text_To_Display string) string {
 	Output = strings.TrimSpace(Output)
 	return Output
 }
+
 func Convert_To_English(Input_String string) string {
 	Output := ""
 
@@ -161,6 +162,7 @@ func Reverse_String(Input_String string) string {
 	}
 	return string(Runes)
 }
+
 func Show_Menu() {
 	fmt.Println("0. Show this menu")
 	fmt.Println("1. Convert to english")
