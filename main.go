@@ -8,11 +8,6 @@ import (
 	"time"
 )
 
-const (
-	RLE = "\u202B" // force RTL
-	PDF = "\u202C" // end block
-)
-
 func Get_Input(Text_To_Display string) string {
 	Reader := bufio.NewReader(os.Stdin)
 	fmt.Printf("%v: ", Text_To_Display)
@@ -23,7 +18,6 @@ func Get_Input(Text_To_Display string) string {
 
 func Convert_To_English(Input_String string) string {
 	Output := ""
-
 	for _, Character := range Input_String {
 		switch string(Character) {
 		case "/":
@@ -193,10 +187,6 @@ func main() {
 			Text_To_Convert := Get_Input("Enter text to convert")
 			Converted_Text_For_Real, Converted_Text_For_Display := Convert_To_Hebrew(Text_To_Convert)
 			fmt.Printf("Original: %s\nConverted: %s\nOrganized-Converted: %s\n", Text_To_Convert, Converted_Text_For_Real, Converted_Text_For_Display)
-		case "3":
-
-			str := "מה קורה "
-			fmt.Println(RLE + str + PDF)
 		case "10":
 			Running = false
 			fmt.Println("Ok, goodbye!")
