@@ -78,6 +78,8 @@ func Convert_To_English(Input_String string) string {
 			Output += ","
 		case "ץ":
 			Output += "."
+		case ",":
+			Output += "'"
 		default:
 			Output += fmt.Sprintf("%c", Character)
 		}
@@ -148,6 +150,8 @@ func Convert_To_Hebrew(Input_String string) (string, string) {
 			Output += "ת"
 		case ".":
 			Output += "ץ"
+		case "'":
+			Output += ","
 		default:
 			Output += fmt.Sprintf("%c", Character)
 		}
@@ -167,6 +171,7 @@ func Show_Menu() {
 	fmt.Println("0. Show this menu")
 	fmt.Println("1. Convert to english")
 	fmt.Println("2. Convert to hebrew")
+	fmt.Println("10. Exit")
 }
 
 func main() {
